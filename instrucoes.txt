@@ -1,0 +1,16 @@
+Preparando ambiente:
+-Adicione a seguinte linha no /etc/hosts
+--127.0.0.1		lanchonete.dextra.com
+
+- Git clone https://github.com/BonifacioJose/lanchonete.git
+- cd lanchonete
+
+Rodando backend:
+- docker-compose up
+
+Rodando front end
+---- Não ficou claro no exercício se o front end deveria vir dockerizado na mesma imagem, nem qual a porta que ele deveria utilizar. Sendo assim, o front precisa rodar por fora da imagem Docker
+- Adicione esta extensao no Chrome: https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb
+- Inicite o app da extensão anterior e aponte para a pasta lanchonete/frontend/dist
+- Acesse no navegador o endereço indicado pela extensao (default http://127.0.0.1:8887)
+Chrome web server apontando para lanchonete/frontend/dis

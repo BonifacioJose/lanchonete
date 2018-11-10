@@ -1,0 +1,30 @@
+Justificativa design:
+
+Back-end:
+
+Utilizado Spring Boot para implementação do back-end por ser uma plataforma mais acessível e possuir suporte a todos os requisitos necessários para o exerício, desde a um servidor de aplicação embutido até a exposição de endpoints para ser consumida pelo client.
+
+A arquitetura aqui é simples, e dividida em duas camadas: Modelo e Controller. 
+
+- Camada modelo estão concentradas as entidades e os repositories para armazenarem e persistirem dados. Highlight desta parte é a implementação do pattern singleton no PedidoRepository para garantir que todos os dados trafegados fiquem em memoria e acessíveis por igual em qualquer ponto da aplicação;
+
+- Camada controller são concentrados os endpoints de comunicação com o client. O maior diferencial aqui foi a implementação dos quatro principais métodos de manipulação de pedidos (GET, POST, PUT, DELETE), e também pelo tratamento mais detalhado dos retornos com um ResponseEntity para garantir que os códigos HTTP retornados sejam os corretos.
+
+No geral, a aplicação dos conceitos foi decidida logo no início, e levemente ajustada com as iterações. O mais importante desta etapa foi ter criado uma aplicação que fornecesse um fácil método para deploy e criação/execução de testes unitários e rest endpoints
+
+
+Front-end:
+
+Apesar de os requisitos terem solicitado utilizar jQuery, optei por utilizar Vue pois não tenho experiência o suficiente com o jQuery para desenvolver uma aplicação (mesmo que de pequeno porte), e isto impactaria no tempo final de desenvolvimento. Também optei pelo Vue por ser uma plataforma muito mais robusta e atual, onde durante a execução deste exercício pude aprender melhor como funciona.
+
+A arquitetura aqui ficou dividida em 3 componentes e duas rotas.
+
+A primeira rota é a página inicial onde é possível listar, excluir e navegar para a tela de criação/edição de pedidos.
+
+A segunda rota é a página de criação/edição de pedidos, onde é possível definir os dados de um pedido.
+
+Os componentes servem basicamente para listar pedidos, editar pedidos e mostrar uma lista detalhada de porções de ingredientes.
+
+A utilização do Vue foi a primeira escolha a ser aplicada. Já sabia de início que precisaria de uma manipulaçao de DOM e de requisições HTTP para buscar dados do servidor. Além disto o Vue fornecia uma boa biblioteca de componentes com Veutify que possibilitaram um desenvolvimento bem mais simplificado onde não foi preciso escrever códigos JavaScript ou CSS para a criação de layouts.
+
+Embora nos requisitos tenha sido pedido o jQuery, imagino que o Vue seja uma opção equivalente ou até mesmo melhor, e possibilitou que eu entregasse um projeto de melhor qualidade em um tempo menor de desenvolvimento.
